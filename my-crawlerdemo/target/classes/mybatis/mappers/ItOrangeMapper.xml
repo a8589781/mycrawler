@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.my.crawler.mapper.ItOrangeMapper">
+
+	<insert id="saveItOranges">
+		INSERT IGNORE crawler_itorange (id,investmentTime,title,url,image,round,money,investorset) VALUES 
+		<foreach collection="itOranges" separator="," item="itOrange">
+			(#{itOrange.id},#{itOrange.investmentTime},#{itOrange.title},#{itOrange.url},#{itOrange.image},#{itOrange.round},
+			#{itOrange.money},#{itOrange.investorset})
+		</foreach>;
+	</insert>
+	
+</mapper>
